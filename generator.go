@@ -447,7 +447,7 @@ func (g *generator) getContainers() ([]*RuntimeContainer, error) {
 			})
 		}
 
-		runtimeContainer.Env = splitKeyValueSlice(container.Config.Env)
+		runtimeContainer.Env = splitKeyValueSlice(container.HostConfig.Env)
 		runtimeContainer.Labels = container.Config.Labels
 		containers = append(containers, runtimeContainer)
 	}
